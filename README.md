@@ -5,13 +5,48 @@
 ### Gradle
 
 ```gradle
-Coming soon...
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+repositories {
+	maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.TheCurano:Java-Utility:Tag'
+}
 ```
 
 ### Maven
     
 ```maven
-Coming soon...
+<repositories>
+    <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+	
+<dependency>
+    <groupId>com.github.TheCurano</groupId>
+	<artifactId>Java-Utility</artifactId>
+	<version>Tag</version>
+</dependency>
+
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>3.2.4</version>
+    <executions>
+        <execution>
+        <phase>package</phase>
+            <goals>
+                <goal>shade</goal>
+             </goals>
+        </execution>
+    </executions>
+</plugin>
 ```
 
 ## YamlConfiguration
